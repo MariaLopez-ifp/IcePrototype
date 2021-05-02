@@ -2,8 +2,8 @@ import  * as yasha from './yasha.js';
 
 var config = {
 	type: Phaser.AUTO,
-	width:700,
-	height:500,
+	width:600,
+	height:400,
 	pixelArt:true,
 	physics:{
 		default:'arcade',
@@ -35,7 +35,7 @@ var playerVelocidad;
 var player;
 var grupoFuego;
 var grupoHielo;
-var freezeTiles
+var freezeTiles;
 var allTiles;
 var tileFuego;
 var antorchas;
@@ -69,10 +69,10 @@ function create()
 
 	const tileset = mapa.addTilesetImage('terrain', 'cuevaTiles');
 
-	lago = mapa.createLayer('lago', tileset).setDepth(1);
+	lago = mapa.createLayer('lago', tileset).setDepth(5);
 	fondo = mapa.createLayer('fondo', tileset);
 	muros = mapa.createLayer('muros', tileset).setDepth(0);
-	objetos = mapa.createLayer('objetos', tileset).setDepth(10);
+	objetos = mapa.createLayer('objetos', tileset).setDepth(4);
 	objetos2 = mapa.createLayer('objetos2', tileset).setDepth(0);
 
 	mapa.x = 0;
@@ -90,17 +90,19 @@ function create()
 		antorchas.unshift(obj);
 	});
 
-	//freezeTiles = lago.filterTiles(tile => tile.properties.freeze).map(x => x.index);
+	yasha.create(allTiles, antorchas, config);
 
-	//yasha.setFreeze(lago, freezeTiles);
+	freezeTiles = lago.filterTiles(tile => tile.properties.ice).map(x => x.index);
 
-	//lago = lago.filterTiles(tile => tile.properties.hielo).map(x => x.index);
-    //PoisonAspectTiles = lago.filterTiles(tile => tile.properties.aspectoVeneno).map(x => x.index);
+	//console.log(freezeTiles)
+	//console.log(lago)
 
-    //lago.setTileIndexCallback(freeze, lago, this.physics.add.overlap(hielo, lago));
+	yasha.setFreeze(lago, freezeTiles);
+	//yasha.freeze(lago,lago)
+	var cosas = yasha.grupoHielo
+	console.log(cosas)
 
-	//torchTiles = objetos.filterTiles(tile => tile.properties.torch).map(x => x.index);
-	//objetos.setTileIndexCallback(torchTiles, burn, this.physics.add.overlap(grupoFuego, objetos));
+ 	lago.setTileIndexCallback(freezeTiles, yasha.freeze, this.physics.add.overlap(yasha.grupoHielo, lago));
 
 	objetos.setCollisionByProperty({collides: true});
 	muros.setCollisionByProperty({collides: true});
@@ -113,8 +115,6 @@ function create()
 	fondo.setPipeline('Light2D');
 	objetos2.setPipeline('Light2D');
 	lago.setPipeline('Light2D');
-
-	yasha.create(allTiles, antorchas, config);
 }
 
 function update()

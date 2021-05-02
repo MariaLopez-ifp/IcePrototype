@@ -1,10 +1,10 @@
 var scene;
-var player;
+export var player;
 var contFuego;
 var contHielo;
 var playerVelocidad;
 var grupoFuego;
-var grupoHielo;
+export var grupoHielo;
 var camara;
 var puntero;
 var pointer;
@@ -34,7 +34,7 @@ export function create(allTiles, antorchas, conf, light)
 
 	playerVelocidad = 125;
 
-	player = scene.physics.add.sprite(-240,-50, 'Yasha').setDepth(2);
+	player = scene.physics.add.sprite(-240,-50, 'Yasha').setDepth(6);
 	player.setOrigin(0.5);
 
 	grupoFuego = scene.physics.add.group();
@@ -77,7 +77,6 @@ export function update()
     {
         input();
     }
-    
     updateHielo();
 	contHielo--;
 
@@ -92,32 +91,32 @@ function input()
 {
 	if(KeyW.isDown)
 	{
-		player.vectorY=-1;
+		player.vectorY = -1;
 	}
 
 	else if(KeyS.isDown)
 	{
-		player.vectorY=1;
+		player.vectorY = 1;
 	}
 
 	else
 	{
-		player.vectorY=0;
+		player.vectorY  =0;
 	}
 
 	if(KeyA.isDown)
 	{
-		player.vectorX=-1;
+		player.vectorX = -1;
 	}
 
 	else if(KeyD.isDown)
 	{
-		player.vectorX=1;
+		player.vectorX = 1;
 	}
 
 	else
 	{
-		player.vectorX=0;
+		player.vectorX = 0;
 	}
 
 	if (pointer.isDown && contFuego <= 0)
@@ -199,9 +198,9 @@ function updateHielo()
     }
 }
 
-function freeze(objeto, lago)
+export function freeze(objeto, lago)
 {
-    if (lago.properties.freeze)
+    if (lago.properties != undefined &&lago.properties.freeze)
     {
         lago.setAlpha(0);
 
@@ -210,7 +209,7 @@ function freeze(objeto, lago)
 
     setTimeout(()=>
     {
-        if(!lago.properties.freeze)
+        if(lago.properties != undefined &&!lago.properties.freeze)
         {
             lago.properties.freeze = true;
         }
@@ -218,11 +217,9 @@ function freeze(objeto, lago)
         lago.setAlpha(1);
 
     },4000);
-
-    //console.log(hielo.properties.veneno);
 }
 
 export function setFreeze(layer, id)
 {
-	layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(grupoHielo, layer));
+	/*layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(grupoHielo, layer));*/
 }
