@@ -23,7 +23,7 @@ export function preload()
 	this.load.image('Yasha', 'assets/sprites/yasha.png');
 	this.load.image('disparoHielo', 'assets/sprites/hielo.png');
 	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
-	this.load.spritesheet('enemigo', 'assets/sprites/enemigo.png', {frameWidth:86, frameHeight:86});
+	this.load.spritesheet('enemigo', 'assets/sprites/enemigo.png', {frameWidth:32, frameHeight:32});
 
 	scene = this;
 }
@@ -36,7 +36,7 @@ export function create(allTiles, antorchas, conf, light)
 
 	playerVelocidad = 125;
 
-	player = scene.physics.add.sprite(-240, -50, 'Yasha').setDepth(6);
+	player = scene.physics.add.sprite(-240, -50, 'Yasha').setDepth(10);
 	player.setOrigin(0.5);
 
 	grupoFuego = scene.physics.add.group();
@@ -49,15 +49,15 @@ export function create(allTiles, antorchas, conf, light)
 
 	scene.anims.create({
 		key:'hot',
-		frames: scene.anims.generateFrameNames('fuego', {start:0, end:3}),
+		frames: scene.anims.generateFrameNames('fuego'),
 		frameRate: 10,
 		repeat: -1
 	});
 
 	scene.anims.create({
 		key:'slime',
-		frames: scene.anims.generateFrameNames('enemigo', {start:0, end:2}),
-		frameRate: 5,
+		frames: scene.anims.generateFrameNames('enemigo'),
+		frameRate: 4,
 		repeat: -1
 	});
 
@@ -83,6 +83,8 @@ export function create(allTiles, antorchas, conf, light)
 	KeyW = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
 	KeyS = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
 	Hielo = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+	generarEnemigo();
 }
 
 export function update()
@@ -145,8 +147,6 @@ function input()
 	{
 		generarHielo();
 	}
-
-	generarEnemigo();
 
 	player.dir = new Phaser.Math.Vector2(player.vectorX, player.vectorY);
 	player.dir.normalize();
@@ -228,9 +228,8 @@ function updateHielo()
 
 function generarEnemigo()
 {
-	var e = grupoEnemigos.create(-240,-50, 'enemigo').setDepth(10).setPipeline('Light2D');
-	e.play('slime');
-	e.scale = 0.9;
+	var e = grupoEnemigos.create(-240, -350, 'enemigo').setDepth(10).setPipeline('Light2D');
+	e.play('slime', true);
 }
 
 //function updateEnemigo()
