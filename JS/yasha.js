@@ -23,7 +23,7 @@ export function preload()
 	this.load.image('Yasha', 'assets/sprites/yasha.png');
 	this.load.image('disparoHielo', 'assets/sprites/hielo.png');
 	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
-	this.load.spritesheet('enemigo', 'assets/sprites/enemigo.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('enemigo', 'assets/sprites/enemigo.png', {frameWidth:86, frameHeight:86});
 
 	scene = this;
 }
@@ -56,8 +56,8 @@ export function create(allTiles, antorchas, conf, light)
 
 	scene.anims.create({
 		key:'slime',
-		frames: scene.anims.generateFrameNames('fuego', {start:0, end:3}),
-		frameRate: 10,
+		frames: scene.anims.generateFrameNames('enemigo', {start:0, end:2}),
+		frameRate: 5,
 		repeat: -1
 	});
 
@@ -76,6 +76,7 @@ export function create(allTiles, antorchas, conf, light)
 	pointer = scene.input.activePointer;
 
 	player.setPipeline('Light2D');
+	
 
 	KeyA = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
 	KeyD = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
@@ -90,11 +91,14 @@ export function update()
     {
         input();
     }
+
     updateHielo();
 	contHielo--;
 
 	updateFuego();
 	contFuego--;
+
+	//updateEnemigo();
 
 	puntero.x = player.x - config.width / 2 + pointer.x;
 	puntero.y = player.y - config.height / 2 + pointer.y;
@@ -141,6 +145,8 @@ function input()
 	{
 		generarHielo();
 	}
+
+	generarEnemigo();
 
 	player.dir = new Phaser.Math.Vector2(player.vectorX, player.vectorY);
 	player.dir.normalize();
@@ -222,15 +228,15 @@ function updateHielo()
 
 function generarEnemigo()
 {
-	var e = grupoEnemigos.create(-240,-50, 'enemigo').setDepth(10);
-	f.play('slime');
-	f.scale = 1;
+	var e = grupoEnemigos.create(-240,-50, 'enemigo').setDepth(10).setPipeline('Light2D');
+	e.play('slime');
+	e.scale = 0.9;
 }
 
-function updateEnemigo()
-{
-	var h = grupoHielo.getChildren()[i];
-}
+//function updateEnemigo()
+//{
+//	var e = grupoHielo.getChildren();
+//}
 
 export function freeze(objeto, lago)
 {
@@ -251,5 +257,5 @@ export function freeze(objeto, lago)
 
 export function setFreeze(layer, id)
 {
-	/*layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(grupoHielo, layer));*/
+	layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(grupoHielo, layer));
 }
