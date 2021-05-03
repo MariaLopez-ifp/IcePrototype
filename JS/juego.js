@@ -94,15 +94,12 @@ function create()
 
 	freezeTiles = lago.filterTiles(tile => tile.properties.ice).map(x => x.index);
 
-	//console.log(freezeTiles)
-	//console.log(lago)
-
 	yasha.setFreeze(lago, freezeTiles);
-	//yasha.freeze(lago,lago)
 	var cosas = yasha.grupoHielo
-	console.log(cosas)
 
  	lago.setTileIndexCallback(freezeTiles, yasha.freeze, this.physics.add.overlap(yasha.grupoHielo, lago));
+	 
+	lago.setTileIndexCallback(freezeTiles, yasha.freeze, this.physics.add.overlap(yasha.grupoFuego, lago));
 
 	objetos.setCollisionByProperty({collides: true});
 	muros.setCollisionByProperty({collides: true});

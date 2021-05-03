@@ -3,8 +3,9 @@ export var player;
 var contFuego;
 var contHielo;
 var playerVelocidad;
-var grupoFuego;
+export var grupoFuego;
 export var grupoHielo;
+var grupoEnemigos;
 var camara;
 var puntero;
 var pointer;
@@ -22,6 +23,7 @@ export function preload()
 	this.load.image('Yasha', 'assets/sprites/yasha.png');
 	this.load.image('disparoHielo', 'assets/sprites/hielo.png');
 	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('enemigo', 'assets/sprites/enemigo.png', {frameWidth:32, frameHeight:32});
 
 	scene = this;
 }
@@ -34,12 +36,14 @@ export function create(allTiles, antorchas, conf, light)
 
 	playerVelocidad = 125;
 
-	player = scene.physics.add.sprite(-240,-50, 'Yasha').setDepth(6);
+	player = scene.physics.add.sprite(-240, -50, 'Yasha').setDepth(6);
 	player.setOrigin(0.5);
 
 	grupoFuego = scene.physics.add.group();
 
 	grupoHielo = scene.physics.add.group().setDepth(20);
+
+	grupoEnemigos = scene.physics.add.group().setDepth(20);
 
 	player.muerto = false;
 
@@ -50,9 +54,18 @@ export function create(allTiles, antorchas, conf, light)
 		repeat: -1
 	});
 
+	scene.anims.create({
+		key:'slime',
+		frames: scene.anims.generateFrameNames('fuego', {start:0, end:3}),
+		frameRate: 10,
+		repeat: -1
+	});
+
 	scene.physics.add.overlap(grupoFuego, antorchas, burn, null, scene);
 
 	scene.physics.add.collider(player, allTiles);
+
+	scene.physics.add.collider(grupoHielo, allTiles);
 
 	scene.cameras.main.startFollow(player);
 
@@ -129,7 +142,7 @@ function input()
 		generarHielo();
 	}
 
-	player.dir = new Phaser.Math.Vector2( player.vectorX, player.vectorY);
+	player.dir = new Phaser.Math.Vector2(player.vectorX, player.vectorY);
 	player.dir.normalize();
 	player.setVelocityX(playerVelocidad*player.dir.x);
 	player.setVelocityY(playerVelocidad*player.dir.y)
@@ -140,8 +153,12 @@ function generarFuego()
 	var f = grupoFuego.create(puntero.x, puntero.y, 'fuego').setDepth(20);
 	f.play('hot');
 	f.scale = 1;
+
 	contFuego = 30;
+
 	f.light = scene.lights.addLight(f.x, f.y, 100).setColor(0xffffff).setIntensity(1);
+
+	f.fuego = true;
 }
 
 function updateFuego()
@@ -179,6 +196,10 @@ function generarHielo()
 	var h = grupoHielo.create (player.x, player.y, 'disparoHielo').setDepth(20);
 		h.angle = Math.atan2(puntero.y - h.y, puntero.x - h.x) * 180 / Math.PI;
 		h.angle += 45;
+		h.fragil = true;
+		h.hielo = true;
+		h.tiempo = 0;
+		h.setCircle(2, 14, 14);
 
 		contHielo = 30;
 
@@ -190,33 +211,42 @@ function updateHielo()
 	for(var i = 0; i < grupoHielo.getChildren().length; i++)
     {
     	var h = grupoHielo.getChildren()[i];
+		h.tiempo++;
 
-    	if(h.x > config.width + h.width * 0.25 / 2)
+		if (h.tiempo > 90)
 		{
 			h.destroy();
 		}
     }
 }
 
+function generarEnemigo()
+{
+	var e = grupoEnemigos.create(-240,-50, 'enemigo').setDepth(10);
+	f.play('slime');
+	f.scale = 1;
+}
+
+function updateEnemigo()
+{
+	var h = grupoHielo.getChildren()[i];
+}
+
 export function freeze(objeto, lago)
 {
-    if (lago.properties != undefined &&lago.properties.freeze)
+    if (lago.properties != undefined && !lago.properties.freeze && objeto.hielo )
     {
         lago.setAlpha(0);
 
-        lago.properties.freeze = false;
+        lago.properties.freeze = true;
     }
 
-    setTimeout(()=>
+    if(lago.properties != undefined && lago.properties.freeze && objeto.fuego)
     {
-        if(lago.properties != undefined &&!lago.properties.freeze)
-        {
-            lago.properties.freeze = true;
-        }
+		lago.setAlpha(1);
 
-        lago.setAlpha(1);
-
-    },4000);
+        lago.properties.freeze = false;
+    }    
 }
 
 export function setFreeze(layer, id)
