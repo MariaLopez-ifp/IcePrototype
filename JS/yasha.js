@@ -5,7 +5,6 @@ var contHielo;
 var playerVelocidad;
 export var grupoFuego;
 export var grupoHielo;
-var grupoEnemigos;
 var camara;
 var puntero;
 var pointer;
@@ -23,7 +22,6 @@ export function preload()
 	this.load.image('Yasha', 'assets/sprites/yasha.png');
 	this.load.image('disparoHielo', 'assets/sprites/hielo.png');
 	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
-	this.load.spritesheet('enemigo', 'assets/sprites/enemigo.png', {frameWidth:32, frameHeight:32});
 
 	scene = this;
 }
@@ -43,21 +41,12 @@ export function create(allTiles, antorchas, conf, light)
 
 	grupoHielo = scene.physics.add.group().setDepth(20);
 
-	grupoEnemigos = scene.physics.add.group().setDepth(20);
-
 	player.muerto = false;
 
 	scene.anims.create({
 		key:'hot',
 		frames: scene.anims.generateFrameNames('fuego'),
 		frameRate: 10,
-		repeat: -1
-	});
-
-	scene.anims.create({
-		key:'slime',
-		frames: scene.anims.generateFrameNames('enemigo'),
-		frameRate: 4,
 		repeat: -1
 	});
 
@@ -76,15 +65,12 @@ export function create(allTiles, antorchas, conf, light)
 	pointer = scene.input.activePointer;
 
 	player.setPipeline('Light2D');
-	
 
 	KeyA = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
 	KeyD = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 	KeyW = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
 	KeyS = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
 	Hielo = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-
-	generarEnemigo();
 }
 
 export function update()
@@ -225,17 +211,6 @@ function updateHielo()
 		}
     }
 }
-
-function generarEnemigo()
-{
-	var e = grupoEnemigos.create(-240, -350, 'enemigo').setDepth(10).setPipeline('Light2D');
-	e.play('slime', true);
-}
-
-//function updateEnemigo()
-//{
-//	var e = grupoHielo.getChildren();
-//}
 
 export function freeze(objeto, lago)
 {

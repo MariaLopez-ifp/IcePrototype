@@ -1,4 +1,5 @@
 import  * as yasha from './yasha.js';
+import  * as enemigo from './enemigo.js';
 
 var config = {
 	type: Phaser.AUTO,
@@ -59,6 +60,7 @@ function preload()
 	//this.load.image('boss', 'assets/sprites/enemigoBoss.png');
 
 	yasha.preload.call(this)
+	enemigo.preload.call(this)
 }
 
 function create()
@@ -91,6 +93,7 @@ function create()
 	});
 
 	yasha.create(allTiles, antorchas, config);
+	enemigo.create();
 
 	freezeTiles = lago.filterTiles(tile => tile.properties.ice).map(x => x.index);
 
