@@ -34,7 +34,7 @@ export function create(allTiles, antorchas, conf, light)
 
 	playerVelocidad = 125;
 
-	player = scene.physics.add.sprite(-240, -50, 'Yasha').setDepth(10);
+	player = scene.physics.add.sprite(-240, 950, 'Yasha').setDepth(2);
 	player.setOrigin(0.5);
 
 	grupoFuego = scene.physics.add.group();
@@ -63,8 +63,6 @@ export function create(allTiles, antorchas, conf, light)
 	puntero = new Phaser.Geom.Point();
 
 	pointer = scene.input.activePointer;
-
-	player.setPipeline('Light2D');
 
 	KeyA = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
 	KeyD = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);

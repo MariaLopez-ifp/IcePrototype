@@ -1,5 +1,6 @@
 import  * as yasha from './yasha.js';
 import  * as enemigo from './enemigo.js';
+import  * as oscuridad from './mapa.js';
 
 var config = {
 	type: Phaser.AUTO,
@@ -27,9 +28,11 @@ var game = new Phaser.Game(config);
 var scene;
 var contFuego;
 var contHielo;
+var tierra;
 var lago;
 var fondo;
 var muros;
+var luz;
 var objetos;
 var objetos2;
 var playerVelocidad;
@@ -38,6 +41,8 @@ var grupoFuego;
 var grupoHielo;
 var freezeTiles;
 var allTiles;
+var darkTiles;
+var allTilesets;
 var tileFuego;
 var antorchas;
 var camara;
@@ -52,10 +57,11 @@ var Hielo;
 var i;
 var f;
 
-function preload()
+export function preload()
 {
 	//this.load.atlas('atlas', 'assets/atlas/atlas.png', 'assets/atlas/sprites.json');
 	this.load.image('cuevaTiles', 'assets/mapas/terrain.png');
+	this.load.image('snowTiles', 'assets/mapas/snow.png');
 	this.load.tilemapTiledJSON('CuevaMago', 'assets/mapas/mapa_CuevaMago.json');
 	//this.load.image('boss', 'assets/sprites/enemigoBoss.png');
 
@@ -70,17 +76,22 @@ function create()
 	const mapa = this.make.tilemap({key:'CuevaMago'});
 
 	const tileset = mapa.addTilesetImage('terrain', 'cuevaTiles');
+	const tileset2 = mapa.addTilesetImage('snow', 'snowTiles');
 
-	lago = mapa.createLayer('lago', tileset).setDepth(5);
-	fondo = mapa.createLayer('fondo', tileset);
-	muros = mapa.createLayer('muros', tileset).setDepth(0);
-	objetos = mapa.createLayer('objetos', tileset).setDepth(4);
-	objetos2 = mapa.createLayer('objetos2', tileset).setDepth(0);
+	allTilesets = [tileset,tileset2]
+
+	lago = mapa.createLayer('lago', allTilesets).setDepth(1);
+	fondo = mapa.createLayer('fondo', allTilesets);
+	tierra = mapa.createLayer('tierra', allTilesets);
+	luz = mapa.createLayer('luz', allTilesets);
+	muros = mapa.createLayer('muros', allTilesets).setDepth(0);
+	objetos = mapa.createLayer('objetos', allTilesets).setDepth(5);
+	objetos2 = mapa.createLayer('objetos2', allTilesets).setDepth(1);
 
 	mapa.x = 0;
 	mapa.y = 0;
 
-	allTiles = [objetos, muros, fondo, objetos2, lago];
+	allTiles = [objetos, muros, fondo, objetos2, lago, luz, tierra];
 
 	tileFuego = mapa.createFromObjects('fuegoTiles');
 	antorchas = new Array();
@@ -94,8 +105,11 @@ function create()
 
 	yasha.create(allTiles, antorchas, config);
 	enemigo.create();
+	oscuridad.create(scene, allTiles);
+
 
 	freezeTiles = lago.filterTiles(tile => tile.properties.ice).map(x => x.index);
+	darkTiles = luz.filterTiles(tile => tile.properties.dark).map(x => x.index);
 
 	yasha.setFreeze(lago, freezeTiles);
 	var cosas = yasha.grupoHielo
@@ -104,20 +118,15 @@ function create()
 	 
 	lago.setTileIndexCallback(freezeTiles, yasha.freeze, this.physics.add.overlap(yasha.grupoFuego, lago));
 
+	luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, this.physics.add.overlap(yasha, luz));
+
 	objetos.setCollisionByProperty({collides: true});
 	muros.setCollisionByProperty({collides: true});
-
-	this.lights.enable().setAmbientColor(0x656565);
-	light = scene.lights.addLight(0, 0, 0);
-
-	objetos.setPipeline('Light2D');
-	muros.setPipeline('Light2D');
-	fondo.setPipeline('Light2D');
-	objetos2.setPipeline('Light2D');
-	lago.setPipeline('Light2D');
+	objetos2.setCollisionByProperty({collides: true});
 }
 
 function update()
 {
 	yasha.update();
+	oscuridad.darkMode();
 }

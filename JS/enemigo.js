@@ -1,4 +1,4 @@
-import * as mapa from './juego.js';
+import * as juego from './juego.js';
 import * as yasha from './yasha.js';
 
 var scene;
