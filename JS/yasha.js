@@ -1,3 +1,5 @@
+import * as utilidades from './utilidades.js';
+
 var scene;
 export var player;
 var contFuego;
@@ -34,12 +36,12 @@ export function create(allTiles, antorchas, conf, light)
 
 	playerVelocidad = 125;
 
-	player = scene.physics.add.sprite(-240, 950, 'Yasha').setDepth(2);
+	player = scene.physics.add.sprite(-240, 850, 'Yasha').setDepth(2).setPipeline('Light2D');
 	player.setOrigin(0.5);
 
 	grupoFuego = scene.physics.add.group();
 
-	grupoHielo = scene.physics.add.group().setDepth(20);
+	grupoHielo = scene.physics.add.group().setDepth(2);
 
 	player.muerto = false;
 
@@ -69,6 +71,8 @@ export function create(allTiles, antorchas, conf, light)
 	KeyW = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
 	KeyS = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
 	Hielo = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+	player.luz = scene.lights.addLight(player.x, player.y, 0);
 }
 
 export function update()
@@ -88,6 +92,9 @@ export function update()
 
 	puntero.x = player.x - config.width / 2 + pointer.x;
 	puntero.y = player.y - config.height / 2 + pointer.y;
+
+	player.luz.x = player.x
+	player.luz.y = player.y
 }
 
 function input()
@@ -168,19 +175,6 @@ function updateFuego()
 	});
 }
 
-export function burn(objeto, fuego)
-{
-	if(!objeto.encendido)
-	{
-		var f = scene.add.sprite(objeto.x, objeto.y, 'fuego').setDepth(20);
-		f.play('hot');
-
-		f.light = scene.lights.addLight(objeto.x, objeto.y, 800).setColor(0xffffff).setIntensity(2);
-
-		objeto.encendido = true;
-	}
-}
-
 function generarHielo()
 {
 	var h = grupoHielo.create (player.x, player.y, 'disparoHielo').setDepth(20);
@@ -207,6 +201,31 @@ function updateHielo()
 		{
 			h.destroy();
 		}
+    }
+}
+
+export function burn(objeto, fuego)
+{
+	if(!objeto.encendido)
+	{
+		var f = scene.add.sprite(objeto.x, objeto.y, 'fuego').setDepth(20);
+		f.play('hot');
+
+		f.light = scene.lights.addLight(objeto.x, objeto.y, 800).setColor(0xffffff).setIntensity(1);
+
+		objeto.encendido = true;
+	}
+}
+
+export function derretir(fuego, nieve)
+{
+	if (nieve.properties != undefined && nieve.properties.snow == true && fuego.fuego)
+    {
+        nieve.setAlpha(0);
+
+		utilidades.collisionSwitch(nieve, false);
+
+        nieve.properties.snow = false;
     }
 }
 

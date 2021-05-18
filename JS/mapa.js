@@ -6,20 +6,9 @@ var scene;
 var light;
 var oscuridad = false;
 
-export function create(s, allTiles)
+export function create(s)
 {
 	scene = s;
-
-	for(var i; i < allTiles.lenght; i++)
-	{
-		allTiles[i].setPipeline('Light2D');
-	}
-
-	yasha.player.setPipeline('Light2D');
-
-	scene.lights.enable().setAmbientColor(0x656565);
-	scene.lights.enable().active = false;
-	light = scene.lights.addLight(0, 0, 0);
 }
 
 export function encenderOscuridad()
@@ -31,13 +20,12 @@ export function darkMode()
 {
 	if(oscuridad)
 	{
-		scene.lights.enable().active = true;
+		scene.lights.enable().setAmbientColor(0x656565);
 	}
 
 	else
 	{
-		scene.lights.enable().active = false;
-		console.log(scene.lights.enable().active)
+		scene.lights.enable().setAmbientColor(0xffffff);
 	}
 
 	oscuridad = false;
