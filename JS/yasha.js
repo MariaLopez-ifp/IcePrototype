@@ -22,6 +22,7 @@ var config;
 export function preload()
 {
 	this.load.image('Yasha', 'assets/sprites/yasha.png');
+	this.load.image('YashaBack', 'assets/sprites/yashaBack.png');
 	this.load.image('disparoHielo', 'assets/sprites/hielo.png');
 	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
 
@@ -38,6 +39,7 @@ export function create(allTiles, antorchas, conf, light)
 
 	player = scene.physics.add.sprite(-240, 850, 'Yasha').setDepth(2).setPipeline('Light2D');
 	player.setOrigin(0.5);
+	player.setCircle(12, 4, 8);
 
 	grupoFuego = scene.physics.add.group();
 
@@ -102,11 +104,13 @@ function input()
 	if(KeyW.isDown)
 	{
 		player.vectorY = -1;
+		player.look = 'up';
 	}
 
 	else if(KeyS.isDown)
 	{
 		player.vectorY = 1;
+		player.look = 'down';	
 	}
 
 	else
@@ -139,10 +143,29 @@ function input()
 		generarHielo();
 	}
 
+	playerAnims();
+
 	player.dir = new Phaser.Math.Vector2(player.vectorX, player.vectorY);
 	player.dir.normalize();
 	player.setVelocityX(playerVelocidad*player.dir.x);
 	player.setVelocityY(playerVelocidad*player.dir.y)
+}
+
+export function playerAnims()
+{
+	if(player.look == 'up')
+	{
+		// player.stop();
+		player.setTexture('YashaBack');
+		// player.emitter.stop();
+	}
+
+	else if(player.look == 'down')
+	{
+		// player.stop();
+		player.setTexture('Yasha');
+		// player.emitter.stop();
+	}
 }
 
 function generarFuego()

@@ -1,5 +1,6 @@
 import  * as yasha from './yasha.js';
 import  * as enemigo from './enemigo.js';
+import  * as mago from './magoNPC.js';
 import  * as oscuridad from './mapa.js';
 import  * as portal from './tp.js';
 
@@ -11,7 +12,7 @@ var config = {
 	physics:{
 		default:'arcade',
 		arcade:{
-			debug:false,
+			debug:true,
 			gravity:{y:0}
 		}
 	},
@@ -71,6 +72,7 @@ export function preload()
 
 	yasha.preload.call(this)
 	enemigo.preload.call(this)
+	mago.preload.call(this)
 	portal.preload.call(this)
 }
 
@@ -113,6 +115,7 @@ function create()
 
 	yasha.create(allTiles, antorchas, config);
 	enemigo.create();
+	mago.create();
 	oscuridad.create(scene, allTiles);
 
 	freezeTiles = lago.filterTiles(tile => tile.properties.ice).map(x => x.index);
