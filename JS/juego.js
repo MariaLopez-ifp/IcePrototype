@@ -12,7 +12,7 @@ var config = {
 	physics:{
 		default:'arcade',
 		arcade:{
-			debug:true,
+			debug:false,
 			gravity:{y:0}
 		}
 	},
@@ -113,10 +113,26 @@ function create()
 	tilePortal = mapa.createFromObjects('tpTiles');
 	gates = portal.create(tilePortal);
 
+	enemigo.create();
+
 	yasha.create(allTiles, antorchas, config);
 	enemigo.create();
-	mago.create();
 	oscuridad.create(scene, allTiles);
+
+	tilePortal.forEach(obj => {
+
+		if(obj.name == 'mago')
+		{
+			obj.setAlpha(0)
+			mago.create(obj);
+		}
+
+		if(obj.name == 'jotun')
+		{
+			obj.setAlpha(0)
+			enemigo.generarEnemigo(obj);
+		}
+	})
 
 	freezeTiles = lago.filterTiles(tile => tile.properties.ice).map(x => x.index);
 	darkTiles = luz.filterTiles(tile => tile.properties.dark).map(x => x.index);
@@ -132,12 +148,16 @@ function create()
 	luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, this.physics.add.overlap(yasha, luz));
 
 	objetos.setTileIndexCallback(snowTiles, yasha.derretir, this.physics.add.overlap(yasha.grupoFuego, objetos));
+
+	this.physics.add.collider(mago.mago, yasha.player);
  
 	objetos.setCollisionByProperty({collides: true});
 	muros.setCollisionByProperty({collides: true});
 	objetos2.setCollisionByProperty({collides: true});
 
 	portal.collisionPortal(yasha.player);
+
+	this.physics.add.overlap(yasha.player, mago.mago.detectionbox, yasha.encenderHielito, null, this);
 }
 
 function update()
@@ -145,4 +165,6 @@ function update()
 	yasha.update();
 	portal.update();
 	oscuridad.darkMode();
+	mago.magoTrue(antorchas);
+	enemigo.updateDispEnem();
 }

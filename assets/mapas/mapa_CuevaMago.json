@@ -398,7 +398,7 @@
                  "y":-16
                 }, 
                 {
-                 "data":[680, 680, 680, 680, 681, 682, 680, 680, 680, 681, 682, 683, 680, 680, 681, 682, 680, 712, 712, 680, 681, 682, 712, 712, 680, 681, 682, 683, 680, 680, 681, 682, 712, 744, 744, 680, 680, 680, 744, 744, 712, 680, 681, 682, 712, 680, 680, 681, 744, 776, 776, 712, 680, 712, 776, 776, 744, 680, 681, 682, 744, 712, 680, 681, 776, 776, 777, 744, 680, 744, 776, 777, 776, 680, 681, 682, 776, 744, 680, 681, 776, 777, 778, 776, 680, 776, 776, 777, 778, 680, 681, 682, 776, 776, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 681, 682, 776, 777, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 681, 682, 776, 777, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 681, 682, 776, 777, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 681, 680, 776, 777, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 681, 712, 776, 777, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 680, 744, 776, 777, 680, 681, 776, 777, 778, 779, 712, 776, 777, 778, 779, 680, 712, 776, 776, 777, 680, 681, 776, 777, 778, 779, 744, 776, 777, 778, 779, 712, 744, 776, 777, 778, 680, 681, 776, 777, 778, 779, 776, 776, 777, 778, 779, 744, 776, 776, 777, 778, 712, 713, 680, 680, 680, 776, 777, 778, 779, 779, 779, 776, 776, 777, 778, 779, 744, 745],
+                 "data":[680, 680, 680, 680, 681, 682, 680, 680, 680, 681, 682, 683, 680, 680, 681, 682, 680, 712, 712, 680, 681, 682, 712, 712, 680, 681, 682, 683, 680, 680, 681, 682, 712, 744, 744, 680, 680, 680, 744, 744, 712, 680, 681, 682, 712, 680, 680, 681, 744, 776, 776, 712, 680, 712, 776, 776, 744, 680, 681, 682, 744, 712, 680, 681, 776, 776, 777, 744, 680, 744, 776, 1029, 1029, 1029, 681, 682, 776, 744, 680, 681, 776, 777, 778, 776, 680, 776, 776, 1029, 1029, 1029, 681, 682, 776, 776, 680, 681, 776, 777, 778, 779, 680, 776, 777, 1029, 1029, 1029, 681, 682, 776, 777, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 681, 682, 776, 777, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 681, 682, 776, 777, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 681, 680, 776, 777, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 681, 712, 776, 777, 680, 681, 776, 777, 778, 779, 680, 776, 777, 778, 779, 680, 680, 744, 776, 777, 680, 681, 776, 777, 778, 779, 712, 776, 777, 778, 779, 680, 712, 776, 776, 777, 680, 681, 776, 777, 778, 779, 744, 776, 777, 778, 779, 712, 744, 776, 777, 778, 680, 681, 776, 777, 778, 779, 776, 776, 777, 778, 779, 744, 776, 776, 777, 778, 712, 713, 680, 680, 680, 776, 777, 778, 779, 779, 779, 776, 776, 777, 778, 779, 744, 745],
                  "height":16,
                  "width":16,
                  "x":-16,
@@ -432,15 +432,15 @@
                  "x":0,
                  "y":0
                 }],
-         "height":80,
+         "height":48,
          "id":11,
          "name":"luz",
          "opacity":1,
-         "startx":-48,
+         "startx":-32,
          "starty":-32,
          "type":"tilelayer",
          "visible":true,
-         "width":64,
+         "width":48,
          "x":0,
          "y":0
         }, 
@@ -879,6 +879,102 @@
                  "width":0,
                  "x":-240,
                  "y":-16
+                }, 
+                {
+                 "height":0,
+                 "id":7,
+                 "name":"mago",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-240,
+                 "y":-336
+                }, 
+                {
+                 "height":0,
+                 "id":8,
+                 "name":"jotun",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-1072,
+                 "y":784
+                }, 
+                {
+                 "height":0,
+                 "id":9,
+                 "name":"jotun",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-1104,
+                 "y":1712
+                }, 
+                {
+                 "height":0,
+                 "id":11,
+                 "name":"jotun",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-368,
+                 "y":1904
+                }, 
+                {
+                 "height":0,
+                 "id":12,
+                 "name":"jotun",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-688,
+                 "y":1008
+                }, 
+                {
+                 "height":0,
+                 "id":13,
+                 "name":"jotun",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-144,
+                 "y":848
+                }, 
+                {
+                 "height":0,
+                 "id":14,
+                 "name":"jotun",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-80,
+                 "y":848
+                }, 
+                {
+                 "height":0,
+                 "id":16,
+                 "name":"jotun",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-16,
+                 "y":1560
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -887,16 +983,16 @@
          "y":0
         }],
  "nextlayerid":13,
- "nextobjectid":6,
+ "nextobjectid":17,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.4.3",
+ "tiledversion":"1.6.0",
  "tileheight":32,
  "tilesets":[
         {
          "columns":32,
          "firstgid":1,
-         "image":"..\/Downloads\/terrain.png",
+         "image":"terrain.png",
          "imageheight":1024,
          "imagewidth":1024,
          "margin":0,
@@ -24526,7 +24622,7 @@
         {
          "columns":15,
          "firstgid":1025,
-         "image":"..\/Downloads\/snow.png",
+         "image":"snow.png",
          "imageheight":480,
          "imagewidth":480,
          "margin":0,
@@ -24540,6 +24636,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24563,6 +24664,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24578,6 +24684,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24601,6 +24712,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24620,6 +24736,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24635,6 +24756,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24658,6 +24784,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24673,6 +24804,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24696,6 +24832,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24711,6 +24852,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24734,6 +24880,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24749,6 +24900,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24772,6 +24928,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24787,6 +24948,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24810,6 +24976,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24825,6 +24996,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24848,6 +25024,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24863,6 +25044,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24886,6 +25072,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24901,6 +25092,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24924,6 +25120,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24939,6 +25140,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -24962,6 +25168,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -24977,6 +25188,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25000,6 +25216,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25015,6 +25236,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25038,6 +25264,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25053,6 +25284,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25076,6 +25312,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25091,6 +25332,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25114,6 +25360,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25129,6 +25380,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25152,6 +25408,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25167,6 +25428,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25190,6 +25456,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25205,6 +25476,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25228,6 +25504,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25243,6 +25524,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25266,6 +25552,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25281,6 +25572,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25304,6 +25600,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25319,6 +25620,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25342,6 +25648,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25357,6 +25668,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25380,6 +25696,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25395,6 +25716,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25418,6 +25744,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25437,6 +25768,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25452,6 +25788,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25475,6 +25816,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25492,6 +25838,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -25513,6 +25864,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25530,6 +25886,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -25551,6 +25912,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25568,6 +25934,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -25589,6 +25960,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25606,6 +25982,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -25627,6 +26008,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25642,6 +26028,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25665,6 +26056,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25680,6 +26076,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25703,6 +26104,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25718,6 +26124,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25741,6 +26152,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25756,6 +26172,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25779,6 +26200,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25794,6 +26220,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25817,6 +26248,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25832,6 +26268,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25855,6 +26296,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25870,6 +26316,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25893,6 +26344,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25908,6 +26364,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25931,6 +26392,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25946,6 +26412,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -25969,6 +26440,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -25984,6 +26460,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26007,6 +26488,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26022,6 +26508,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26045,6 +26536,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26060,6 +26556,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26083,6 +26584,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26098,6 +26604,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26121,6 +26632,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26136,6 +26652,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26159,6 +26680,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26174,6 +26700,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26197,6 +26728,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26212,6 +26748,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26235,6 +26776,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26252,6 +26798,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -26273,6 +26824,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26288,6 +26844,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26311,6 +26872,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26326,6 +26892,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26349,6 +26920,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26364,6 +26940,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26387,6 +26968,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26402,6 +26988,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26425,6 +27016,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26440,6 +27036,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26463,6 +27064,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26478,6 +27084,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26501,6 +27112,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26516,6 +27132,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26539,6 +27160,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26554,6 +27180,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26577,6 +27208,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26592,6 +27228,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26615,6 +27256,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26630,6 +27276,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26653,6 +27304,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26668,6 +27324,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26691,6 +27352,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26706,6 +27372,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26729,6 +27400,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26744,6 +27420,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26767,6 +27448,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26782,6 +27468,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26805,6 +27496,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26820,6 +27516,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26843,6 +27544,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26858,6 +27564,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26881,6 +27592,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26896,6 +27612,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26919,6 +27640,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26934,6 +27660,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26957,6 +27688,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -26972,6 +27708,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -26995,6 +27736,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27010,6 +27756,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27033,6 +27784,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27048,6 +27804,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27071,6 +27832,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27086,6 +27852,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27109,6 +27880,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27124,6 +27900,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27147,6 +27928,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27162,6 +27948,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27185,6 +27976,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27200,6 +27996,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27223,6 +28024,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27238,6 +28044,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27261,6 +28072,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27276,6 +28092,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27299,6 +28120,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27314,6 +28140,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27337,6 +28168,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27352,6 +28188,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27375,6 +28216,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27392,6 +28238,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -27413,6 +28264,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27430,6 +28286,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -27451,6 +28312,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27470,6 +28336,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27485,6 +28356,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27508,6 +28384,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27523,6 +28404,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27546,6 +28432,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27561,6 +28452,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27584,6 +28480,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27599,6 +28500,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27622,6 +28528,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27637,6 +28548,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27660,6 +28576,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27679,6 +28600,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27694,6 +28620,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27717,6 +28648,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27732,6 +28668,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27755,6 +28696,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27772,6 +28718,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -27793,6 +28744,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27808,6 +28764,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27831,6 +28792,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27846,6 +28812,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27869,6 +28840,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27888,6 +28864,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27903,6 +28884,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27926,6 +28912,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27941,6 +28932,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -27964,6 +28960,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -27981,6 +28982,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -28002,6 +29008,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28017,6 +29028,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28040,6 +29056,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28057,6 +29078,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -28078,6 +29104,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28095,6 +29126,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
                         }, 
                         {
                          "name":"snow",
@@ -28116,6 +29152,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28135,6 +29176,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28150,6 +29196,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28173,6 +29224,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28188,6 +29244,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28211,6 +29272,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28226,6 +29292,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28249,6 +29320,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28259,6 +29335,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28277,6 +29358,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28287,6 +29373,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28305,6 +29396,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28315,6 +29411,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28333,6 +29434,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28343,6 +29449,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28361,6 +29472,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28371,6 +29487,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28389,6 +29510,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28399,6 +29525,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28417,6 +29548,11 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
                          "type":"bool",
                          "value":false
@@ -28427,6 +29563,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }, 
@@ -28445,7 +29586,147 @@
                          "value":false
                         }, 
                         {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"snow",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":210,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":211,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":212,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":213,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":214,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":215,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":216,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":217,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":218,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":219,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":220,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":221,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":222,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":223,
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":224,
+                 "properties":[
+                        {
+                         "name":"npc",
                          "type":"bool",
                          "value":false
                         }]
@@ -28454,6 +29735,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":1.4,
+ "version":"1.6",
  "width":100
 }

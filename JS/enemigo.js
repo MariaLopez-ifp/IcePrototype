@@ -2,35 +2,74 @@ import * as juego from './juego.js';
 import * as yasha from './yasha.js';
 
 var scene;
-var grupoEnemigos;
 
 export function preload()
 {
 	this.load.spritesheet('enemigo', 'assets/sprites/enemigo.png', {frameWidth:32, frameHeight:32});
+	this.load.image('polvoHielo', 'assets/sprites/polvo.png');
 
 	scene = this;
 }
 
-export var enemigoGroup
+export var grupoEnemigos
+export var grupoDispEnemigo
 
-export function create()
+export function create(obj)
 {
 	grupoEnemigos = scene.physics.add.group();
-	
+	grupoDispEnemigo = scene.physics.add.group();
+
 	scene.anims.create({
 			key:'slime',
 			frames: scene.anims.generateFrameNames('enemigo'),
 			frameRate: 4,
 			repeat: -1
 		});
-
-	generarEnemigo();
 }
 
-export function generarEnemigo()
+export function generarEnemigo(obj)
 {
-	var e = grupoEnemigos.create(-240, 150, 'enemigo').setDepth(10).setPipeline('Light2D');
+	var e = grupoEnemigos.create(obj.x, obj.y, 'enemigo').setDepth(2).setPipeline('Light2D');
 	e.play('slime', true);
+
+	e.detectionbox = scene.add.rectangle(e.x, e.y, 290, 290);
+	scene.physics.add.existing(e.detectionbox, false);
+
+	e.detectionbox.tiempoDisparo = 0;
+
+	scene.physics.add.overlap(yasha.player, e.detectionbox, disparoEnemigo, null, scene);
+}
+
+function disparoEnemigo(py,en)
+{
+	if(en.tiempoDisparo <= 0)
+	{
+		en.tiempoDisparo = 15;
+
+		var d = grupoDispEnemigo.create(en.x - 15, en.y + 5, 'polvoHielo').setDepth(5).setPipeline('Light2D');
+
+	 	d.setAlpha(0.3);
+
+	 	var separar = Phaser.Math.Between(-50, 50)
+
+	 	scene.physics.moveTo(d, yasha.player.x + separar, yasha.player.y + separar, 50);
+
+		d.tiempoVida = 360;
+	}
+
+	en.tiempoDisparo--;
+}
+
+export function updateDispEnem()
+{
+	Phaser.Actions.Call(grupoDispEnemigo.getChildren(),function(d)
+	{
+		d.tiempoVida--;
+		if(d.tiempoVida <= 0)
+		{
+			d.destroy();
+		}
+	});
 }
 
 

@@ -39,7 +39,9 @@ export function create(allTiles, antorchas, conf, light)
 
 	player = scene.physics.add.sprite(-240, 850, 'Yasha').setDepth(2).setPipeline('Light2D');
 	player.setOrigin(0.5);
+	player.hieloTrue = false;
 	player.setCircle(12, 4, 8);
+	player.body.allowDrag = false;
 
 	grupoFuego = scene.physics.add.group();
 
@@ -90,8 +92,6 @@ export function update()
 	updateFuego();
 	contFuego--;
 
-	//updateEnemigo();
-
 	puntero.x = player.x - config.width / 2 + pointer.x;
 	puntero.y = player.y - config.height / 2 + pointer.y;
 
@@ -138,7 +138,7 @@ function input()
 		generarFuego();
 	}
 
-	if (Hielo.isDown && contHielo <= 0)
+	if (Hielo.isDown && contHielo <= 0 && player.hieloTrue == true)
 	{
 		generarHielo();
 	}
@@ -174,7 +174,7 @@ function generarFuego()
 	f.play('hot');
 	f.scale = 1;
 
-	contFuego = 30;
+	contFuego = 40;
 
 	f.light = scene.lights.addLight(f.x, f.y, 100).setColor(0xffffff).setIntensity(1);
 
@@ -272,4 +272,12 @@ export function freeze(objeto, lago)
 export function setFreeze(layer, id)
 {
 	layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(grupoHielo, layer));
+}
+
+export function encenderHielito(yasha, obj)
+{
+	//if(antorchasTrue == true)
+	//{
+		player.hieloTrue = true;
+	//}	
 }
