@@ -975,6 +975,18 @@
                  "width":0,
                  "x":-16,
                  "y":1560
+                }, 
+                {
+                 "height":0,
+                 "id":17,
+                 "name":"boss",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-496,
+                 "y":1328
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -983,7 +995,7 @@
          "y":0
         }],
  "nextlayerid":13,
- "nextobjectid":17,
+ "nextobjectid":18,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.6.0",

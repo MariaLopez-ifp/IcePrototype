@@ -1,6 +1,6 @@
 import * as juego from './juego.js';
 import * as yasha from './yasha.js';
-import * as enemigo from './enemigo.js';
+import * as jotun from './jotun.js';
 
 var scene;
 var light;

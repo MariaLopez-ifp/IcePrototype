@@ -1,8 +1,9 @@
 import  * as yasha from './yasha.js';
-import  * as enemigo from './enemigo.js';
+import  * as jotun from './jotun.js';
 import  * as mago from './magoNPC.js';
 import  * as oscuridad from './mapa.js';
 import  * as portal from './tp.js';
+import  * as bossHielo from './bossHielo.js';
 
 var config = {
 	type: Phaser.AUTO,
@@ -71,9 +72,10 @@ export function preload()
 	this.load.tilemapTiledJSON('CuevaMago', 'assets/mapas/mapa_CuevaMago.json');
 
 	yasha.preload.call(this)
-	enemigo.preload.call(this)
+	jotun.preload.call(this)
 	mago.preload.call(this)
 	portal.preload.call(this)
+	bossHielo.preload.call(this)
 }
 
 function create()
@@ -113,10 +115,10 @@ function create()
 	tilePortal = mapa.createFromObjects('tpTiles');
 	gates = portal.create(tilePortal);
 
-	enemigo.create();
+	jotun.create();
 
 	yasha.create(allTiles, antorchas, config);
-	enemigo.create();
+	jotun.create();
 	oscuridad.create(scene, allTiles);
 
 	tilePortal.forEach(obj => {
@@ -130,9 +132,15 @@ function create()
 		if(obj.name == 'jotun')
 		{
 			obj.setAlpha(0)
-			enemigo.generarEnemigo(obj);
+			jotun.generarEnemigo(obj);
 		}
-	})
+
+		if(obj.name == 'boss')
+		{
+			obj.setAlpha(0)
+			bossHielo.create(obj);
+		}
+	});
 
 	freezeTiles = lago.filterTiles(tile => tile.properties.ice).map(x => x.index);
 	darkTiles = luz.filterTiles(tile => tile.properties.dark).map(x => x.index);
@@ -148,8 +156,10 @@ function create()
 	luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, this.physics.add.overlap(yasha, luz));
 
 	objetos.setTileIndexCallback(snowTiles, yasha.derretir, this.physics.add.overlap(yasha.grupoFuego, objetos));
+	
 
 	this.physics.add.collider(mago.mago, yasha.player);
+	this.physics.add.collider(jotun.grupoEnemigos, yasha.player);
  
 	objetos.setCollisionByProperty({collides: true});
 	muros.setCollisionByProperty({collides: true});
@@ -158,6 +168,8 @@ function create()
 	portal.collisionPortal(yasha.player);
 
 	this.physics.add.overlap(yasha.player, mago.mago.detectionbox, yasha.encenderHielito, null, this);
+
+	this.physics.add.overlap(yasha.player, jotun.grupoDispEnemigo, yasha.quitarVida, null, this);
 }
 
 function update()
@@ -166,5 +178,5 @@ function update()
 	portal.update();
 	oscuridad.darkMode();
 	mago.magoTrue(antorchas);
-	enemigo.updateDispEnem();
+	jotun.updateDispEnem();
 }

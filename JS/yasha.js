@@ -40,7 +40,6 @@ export function create(allTiles, antorchas, conf, light)
 	player = scene.physics.add.sprite(-240, 850, 'Yasha').setDepth(2).setPipeline('Light2D');
 	player.setOrigin(0.5);
 	player.hieloTrue = false;
-	player.setCircle(12, 4, 8);
 	player.body.allowDrag = false;
 
 	grupoFuego = scene.physics.add.group();
@@ -97,6 +96,11 @@ export function update()
 
 	player.luz.x = player.x
 	player.luz.y = player.y
+}
+
+export function quitarVida()
+{
+	
 }
 
 function input()
@@ -234,7 +238,7 @@ export function burn(objeto, fuego)
 		var f = scene.add.sprite(objeto.x, objeto.y, 'fuego').setDepth(20);
 		f.play('hot');
 
-		f.light = scene.lights.addLight(objeto.x, objeto.y, 800).setColor(0xffffff).setIntensity(1);
+		f.light = scene.lights.addLight(objeto.x, objeto.y, 800).setColor(0xffffff).setIntensity(2);
 
 		objeto.encendido = true;
 	}
@@ -276,8 +280,5 @@ export function setFreeze(layer, id)
 
 export function encenderHielito(yasha, obj)
 {
-	//if(antorchasTrue == true)
-	//{
-		player.hieloTrue = true;
-	//}	
+	player.hieloTrue = true;
 }
