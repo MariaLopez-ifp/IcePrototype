@@ -160,6 +160,7 @@ function create()
 
 	this.physics.add.collider(mago.mago, yasha.player);
 	this.physics.add.collider(jotun.grupoEnemigos, yasha.player);
+	this.physics.add.collider(bossHielo.boss, yasha.player);
  
 	objetos.setCollisionByProperty({collides: true});
 	muros.setCollisionByProperty({collides: true});

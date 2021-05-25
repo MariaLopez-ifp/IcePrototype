@@ -1,4 +1,5 @@
 import * as utilidades from './utilidades.js';
+import * as juego from './juego.js';
 
 var scene;
 export var player;
@@ -8,6 +9,7 @@ var playerVelocidad;
 export var grupoFuego;
 export var grupoHielo;
 var camara;
+var cursor;
 var puntero;
 var pointer;
 var light;
@@ -24,6 +26,7 @@ export function preload()
 	this.load.image('Yasha', 'assets/sprites/yasha.png');
 	this.load.image('YashaBack', 'assets/sprites/yashaBack.png');
 	this.load.image('disparoHielo', 'assets/sprites/hielo.png');
+	this.load.image('cursor','assets/images/cursor.png');
 	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
 
 	scene = this;
@@ -76,6 +79,17 @@ export function create(allTiles, antorchas, conf, light)
 	Hielo = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
 	player.luz = scene.lights.addLight(player.x, player.y, 0);
+
+	cursor = scene.add.sprite(0,0,'cursor').setDepth(20);
+	cursor.setOrigin(0.5)
+
+	cursor.pointer = pointer;
+}
+
+export function updatePuntero()
+{
+	cursor.x = player.x - config.width / 2 + pointer.x;
+	cursor.y = player.y - config.height / 2 + pointer.y;
 }
 
 export function update()
@@ -96,6 +110,8 @@ export function update()
 
 	player.luz.x = player.x
 	player.luz.y = player.y
+
+	updatePuntero();
 }
 
 export function quitarVida()
