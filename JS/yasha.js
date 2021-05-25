@@ -1,5 +1,6 @@
 import * as utilidades from './utilidades.js';
 import * as juego from './juego.js';
+import * as mago from './magoNPC.js';
 
 var scene;
 export var player;
@@ -11,6 +12,8 @@ export var grupoHielo;
 var camara;
 var cursor;
 var puntero;
+var cuadroTexto;
+var cuadroTexto2;
 var pointer;
 var light;
 var KeyW;
@@ -19,6 +22,7 @@ var KeyS;
 var KeyD;
 var Hielo;
 var config;
+var textoMago = false;
 
 
 export function preload()
@@ -26,7 +30,7 @@ export function preload()
 	this.load.image('Yasha', 'assets/sprites/yasha.png');
 	this.load.image('YashaBack', 'assets/sprites/yashaBack.png');
 	this.load.image('disparoHielo', 'assets/sprites/hielo.png');
-	this.load.image('cursor','assets/images/cursor.png');
+	this.load.image('cursor','assets/sprites/cursor.png');
 	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
 
 	scene = this;
@@ -88,8 +92,8 @@ export function create(allTiles, antorchas, conf, light)
 
 export function updatePuntero()
 {
-	cursor.x = player.x - config.width / 2 + pointer.x;
-	cursor.y = player.y - config.height / 2 + pointer.y;
+	cursor.x = player.x - config.width / 2 + pointer.x - 14;
+	cursor.y = player.y - config.height / 2 + pointer.y + 15;
 }
 
 export function update()
@@ -112,6 +116,7 @@ export function update()
 	player.luz.y = player.y
 
 	updatePuntero();
+	updateTexto();
 }
 
 export function quitarVida()
@@ -135,7 +140,7 @@ function input()
 
 	else
 	{
-		player.vectorY  =0;
+		player.vectorY = 0;
 	}
 
 	if(KeyA.isDown)
@@ -251,7 +256,7 @@ export function burn(objeto, fuego)
 {
 	if(!objeto.encendido)
 	{
-		var f = scene.add.sprite(objeto.x, objeto.y, 'fuego').setDepth(20);
+		var f = scene.add.sprite(objeto.x, objeto.y, 'fuego').setDepth(15);
 		f.play('hot');
 
 		f.light = scene.lights.addLight(objeto.x, objeto.y, 800).setColor(0xffffff).setIntensity(2);
@@ -294,7 +299,47 @@ export function setFreeze(layer, id)
 	layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(grupoHielo, layer));
 }
 
+function updateTexto()
+{
+	if(cuadroTexto != undefined)
+	{
+		cuadroTexto.x = player.x - config.width / 2 + config.width / 2;
+		cuadroTexto.y = player.y - config.height / 2 + config.height - 50;
+
+		cuadroTexto2.x = player.x - config.width / 2 + config.width / 2;
+		cuadroTexto2.y = player.y - config.height / 2 + config.height - 50;
+
+		scene.magoText.x = player.x - config.width / 2 + 16;
+		scene.magoText.y = player.y - config.height / 2 + 310;
+
+		if(Phaser.Geom.Intersects.RectangleToRectangle(player.getBounds(), mago.mago.detectionbox.getBounds()))
+		{
+			cuadroTexto.setAlpha(1)
+			cuadroTexto2.setAlpha(1)
+			scene.magoText.setAlpha(1)
+		}
+		else{
+			cuadroTexto.setAlpha(0)
+			cuadroTexto2.setAlpha(0)
+			scene.magoText.setAlpha(0)
+		}
+
+	}
+}
+
 export function encenderHielito(yasha, obj)
 {
 	player.hieloTrue = true;
+
+	if(textoMago == false)
+	{
+		cuadroTexto = scene.add.rectangle(player.x - config.width / 2 + config.width / 2, player.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
+
+
+		cuadroTexto2 = scene.add.rectangle(player.x - config.width / 2 + config.width/2, player.y - config.height / 2 + config.height - 50, config.width-8, 100 - 8, 0x000000).setDepth(17);
+
+		scene.magoText = scene.add.text(player.x - config.width / 2 + 16, player.y - config.height / 2 + 310, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame dormir.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
+	}
+
+	textoMago = true;
 }

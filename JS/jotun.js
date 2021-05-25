@@ -55,7 +55,7 @@ function disparoEnemigo(py,en)
 
 	 	scene.physics.moveTo(d, yasha.player.x + separar, yasha.player.y + separar, 50);
 
-		d.tiempoVida = 420;
+		d.tiempoVida = 320;
 	}
 
 	en.tiempoDisparo--;

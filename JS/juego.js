@@ -180,4 +180,5 @@ function update()
 	oscuridad.darkMode();
 	mago.magoTrue(antorchas);
 	jotun.updateDispEnem();
+	bossHielo.updateNieblaBoss();
 }
