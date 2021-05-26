@@ -50,7 +50,7 @@ export function generarBoss(obj)
 {
 	boss = scene.physics.add.staticSprite(obj.x, obj.y, 'bossHielo').setDepth(2).setPipeline('Light2D');
 	boss.setSize(30, 39);
-	boss.setScale(4);
+	boss.setScale(5);
 	boss.play('boss', true);
 
 	grupoDispBoss = scene.physics.add.group();
@@ -80,7 +80,7 @@ function generarNieblaBoss(py,boss)
 		d.setVelocityX(30*dir.x);
 		d.setVelocityY(30*dir.y);
 
-		d.tiempoVida = 240;
+		d.tiempoVida = 300;
 	}
 
 	boss.tiempoDisparo--;

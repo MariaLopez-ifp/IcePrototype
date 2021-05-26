@@ -30,7 +30,8 @@ export function create(obj)
 export function generarEnemigo(obj)
 {
 	var e = grupoEnemigos.create(obj.x, obj.y, 'enemigoJotun').setDepth(2).setPipeline('Light2D');
-	e.setScale(1.3);
+	e.setScale(2);
+	e.setCircle(22);
 	e.play('slime', true);
 
 	e.detectionbox = scene.add.rectangle(e.x, e.y, 290, 290);
@@ -71,4 +72,9 @@ export function updateDispEnem()
 			d.destroy();
 		}
 	});
+}
+
+export function quitarVida()
+{
+	// yasha.vida--;
 }

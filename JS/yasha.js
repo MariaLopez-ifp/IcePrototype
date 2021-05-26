@@ -14,6 +14,7 @@ var cursor;
 var puntero;
 var cuadroTexto;
 var cuadroTexto2;
+var imagenTexto;
 var pointer;
 var light;
 var KeyW;
@@ -30,8 +31,11 @@ export function preload()
 	this.load.image('Yasha', 'assets/sprites/yasha.png');
 	this.load.image('YashaBack', 'assets/sprites/yashaBack.png');
 	this.load.image('disparoHielo', 'assets/sprites/hielo.png');
+	this.load.image('textoHielo', 'assets/sprites/hieloTexto.png');
 	this.load.image('cursor','assets/sprites/cursor.png');
 	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
+	// this.load.spritesheet('YashaBackF', 'assets/sprites/YashaBackFuegoHielo.png', {frameWidth:32, frameHeight:32});
 
 	scene = this;
 }
@@ -48,6 +52,9 @@ export function create(allTiles, antorchas, conf, light)
 	player.setOrigin(0.5);
 	player.hieloTrue = false;
 	player.body.allowDrag = false;
+
+	player.maxVida = 8;
+  	player.vida = player.maxVida;
 
 	grupoFuego = scene.physics.add.group();
 
@@ -312,16 +319,21 @@ function updateTexto()
 		scene.magoText.x = player.x - config.width / 2 + 16;
 		scene.magoText.y = player.y - config.height / 2 + 310;
 
+		imagenTexto.x = player.x - config.width / 2 + 540;
+		imagenTexto.y = player.y - config.height / 2 + 350;
+
 		if(Phaser.Geom.Intersects.RectangleToRectangle(player.getBounds(), mago.mago.detectionbox.getBounds()))
 		{
 			cuadroTexto.setAlpha(1)
 			cuadroTexto2.setAlpha(1)
 			scene.magoText.setAlpha(1)
+			imagenTexto.setAlpha(1)
 		}
 		else{
 			cuadroTexto.setAlpha(0)
 			cuadroTexto2.setAlpha(0)
 			scene.magoText.setAlpha(0)
+			imagenTexto.setAlpha(0)
 		}
 
 	}
@@ -338,7 +350,9 @@ export function encenderHielito(yasha, obj)
 
 		cuadroTexto2 = scene.add.rectangle(player.x - config.width / 2 + config.width/2, player.y - config.height / 2 + config.height - 50, config.width-8, 100 - 8, 0x000000).setDepth(17);
 
-		scene.magoText = scene.add.text(player.x - config.width / 2 + 16, player.y - config.height / 2 + 310, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame dormir.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
+		scene.magoText = scene.add.text(player.x - config.width / 2 + 16, player.y - config.height / 2 + 310, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
+
+		imagenTexto = scene.physics.add.sprite(player.x - config.width / 2 + 540, player.y - config.height / 2 + 330, 'textoHielo').setDepth(18).setScale(2);
 	}
 
 	textoMago = true;

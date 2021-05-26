@@ -170,7 +170,7 @@ function create()
 
 	this.physics.add.overlap(yasha.player, mago.mago.detectionbox, yasha.encenderHielito, null, this);
 
-	this.physics.add.overlap(yasha.player, jotun.grupoDispEnemigo, yasha.quitarVida, null, this);
+	this.physics.add.overlap(yasha.player, jotun.grupoDispEnemigo, jotun.quitarVida, null, this);
 }
 
 function update()
