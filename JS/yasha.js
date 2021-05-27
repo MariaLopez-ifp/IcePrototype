@@ -34,8 +34,10 @@ export function preload()
 	this.load.image('textoHielo', 'assets/sprites/hieloTexto.png');
 	this.load.image('cursor','assets/sprites/cursor.png');
 	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
-	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
-	// this.load.spritesheet('YashaBackF', 'assets/sprites/YashaBackFuegoHielo.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('YashaBackF', 'assets/sprites/yashaBackFuego.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('YashaBackFH', 'assets/sprites/yashaBackFuegoHielo.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('YashaF', 'assets/sprites/yashaFuego.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('YashaBackFH', 'assets/sprites/yashaFuegoHielo.png', {frameWidth:32, frameHeight:32});
 
 	scene = this;
 }
@@ -48,7 +50,7 @@ export function create(allTiles, antorchas, conf, light)
 
 	playerVelocidad = 125;
 
-	player = scene.physics.add.sprite(-240, 850, 'Yasha').setDepth(2).setPipeline('Light2D');
+	player = scene.physics.add.sprite(-980, 2250, 'Yasha').setDepth(2).setPipeline('Light2D');
 	player.setOrigin(0.5);
 	player.hieloTrue = false;
 	player.body.allowDrag = false;
@@ -66,6 +68,34 @@ export function create(allTiles, antorchas, conf, light)
 		key:'hot',
 		frames: scene.anims.generateFrameNames('fuego'),
 		frameRate: 10,
+		repeat: -1
+	});
+
+	scene.anims.create({
+		key:'backF',
+		frames: scene.anims.generateFrameNames('YashaBackF'),
+		frameRate: 3,
+		repeat: -1
+	});
+
+	scene.anims.create({
+		key:'backFH',
+		frames: scene.anims.generateFrameNames('YashaBackFH'),
+		frameRate: 3,
+		repeat: -1
+	});
+
+	scene.anims.create({
+		key:'yashaF',
+		frames: scene.anims.generateFrameNames('YashaF'),
+		frameRate: 3,
+		repeat: -1
+	});
+
+	scene.anims.create({
+		key:'yashaFH',
+		frames: scene.anims.generateFrameNames('YashaFH'),
+		frameRate: 3,
 		repeat: -1
 	});
 
@@ -187,16 +217,12 @@ export function playerAnims()
 {
 	if(player.look == 'up')
 	{
-		// player.stop();
-		player.setTexture('YashaBack');
-		// player.emitter.stop();
+		player.play('backF', true);
 	}
 
 	else if(player.look == 'down')
 	{
-		// player.stop();
-		player.setTexture('Yasha');
-		// player.emitter.stop();
+		player.play('yashaF', true);
 	}
 }
 
